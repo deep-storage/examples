@@ -1,4 +1,4 @@
-import { DeepStorage } from "../../../src/index";
+import { DeepStorage } from "deep-storage";
 
 const uuidv4 = require('uuid/v4');
 

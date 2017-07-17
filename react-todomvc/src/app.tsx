@@ -2,7 +2,7 @@ import * as React from 'react';
 import { TodoModel, Todo } from "./todoModel";
 import TodoFooter from "./footer";
 import TodoItem from "./todoItem";
-import { DeepSubscriptions, Subscription } from "../../../src/index";
+import { DeepSubscriptions, Subscription } from "deep-storage";
 import { values, sortBy, reverse } from 'lodash';
 
 const director = require('director');
