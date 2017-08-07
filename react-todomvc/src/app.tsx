@@ -22,7 +22,6 @@ export interface TodoAppState {
 
 export interface TodoAppProps {
     model: TodoModel;
-    todos?: { [key: string]: Todo }
 }
 
 export default class TodoApp extends React.Component<TodoAppProps, TodoAppState> {
@@ -98,10 +97,11 @@ export default class TodoApp extends React.Component<TodoAppProps, TodoAppState>
     }
 
     render() {
+
         let footer: React.ReactElement<any>;
         let main: React.ReactElement<any>;
 
-        const todoValues = reverse(sortBy(values(this.props.todos), 'timestamp'));
+        const todoValues = reverse(sortBy(values(this.props.model.todos), 'timestamp'));
 
         const shownTodos = todoValues.filter(function (todo) {
             switch (this.state.nowShowing) {

@@ -24,7 +24,7 @@ export interface TodoModel {
 }
 
 export class DeepTodoModel implements TodoModel {
-    constructor(private storage: DeepStorage<Todos>) {
+    constructor(public storage: DeepStorage<Todos>) {
     }
     get todos() { return this.storage.state.todos };
     addTodo(title: string) {
