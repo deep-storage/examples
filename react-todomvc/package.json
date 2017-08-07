@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "deep-storage": "^0.1.0",
-    "deep-storage-react": "^0.1.2",
+    "deep-storage": "^0.4.0",
+    "deep-storage-react": "^0.4.1",
     "director": "^1.2.8",
     "lodash": "^4.17.4",
     "react": "^15.6.1",
