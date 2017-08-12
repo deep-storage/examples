@@ -1,4 +1,4 @@
-# Sample app using Deep Storage
+# SASS Starter app using Deep Storage
 
 ## Introduction
 
