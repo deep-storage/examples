@@ -1,4 +1,4 @@
-# SASS Starter app using Deep Storage
+# SAAS Starter app using Deep Storage
 
 ## Introduction
 
