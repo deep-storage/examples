@@ -4,7 +4,7 @@
 
 This is an example of a SAAS like app written using [deep-storage](https://github.com/deep-storage/deep-storage)
 
-See the demo running using surge at (react-saas.surge.sh/)[http://react-saas.surge.sh/]
+See the demo running using surge at [react-saas.surge.sh](http://react-saas.surge.sh/)
 
 ## Running
 
