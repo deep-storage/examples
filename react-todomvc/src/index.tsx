@@ -4,8 +4,8 @@ import * as ReactDOM from 'react-dom';
 import 'todomvc-common/base.css';
 import 'todomvc-app-css/index.css';
 
-import deepStorage from 'deep-storage/lib';
-import { connect } from 'deep-storage-react/lib';
+import deepStorage from 'deep-storage';
+import { connect } from 'deep-storage-react';
 
 import TodoApp from './app';
 import { Todos, DeepTodoModel } from "./todoModel";
