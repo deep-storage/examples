@@ -1,10 +1,19 @@
-# SAAS Starter app using Deep Storage
+# Real World App using Deep Storage
 
 ## Introduction
 
 This is an example of a SAAS like app written using [deep-storage](https://github.com/deep-storage/deep-storage)
 
-See the demo running using surge at [react-saas.surge.sh](http://react-saas.surge.sh/)
+See a [demo](http://react-saas.surge.sh/).
+
+## Features
+
+* Login / logout flow
+* Form validation using deep-storate-react forms
+* Code splitting via async imports
+* Frameless full screen views or views with menus etc.
+* Uses [bulma](https://bulma.io)
+* TypeScript
 
 ## Running
 
