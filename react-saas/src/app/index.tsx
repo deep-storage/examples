@@ -13,7 +13,7 @@ import AccountsCreator from './Accounts/index';
 export interface AppDeepState {
 }
 
-export default class AppCreator implements ComponentCreator {
+export class AppCreator implements ComponentCreator {
 
     component = async () => {
         const login = new LoginCreator(
@@ -44,3 +44,5 @@ export default class AppCreator implements ComponentCreator {
     ) {
     }
 }
+
+export default AppCreator;
