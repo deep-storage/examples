@@ -24,6 +24,7 @@ export class AppCreator implements ComponentCreator {
         const home = new HomeCreator();
         const accounts = new AccountsCreator();
         const template = new TemplateCreator(this.authentication);
+
         return connect(
             {
                 authentication: this.authentication

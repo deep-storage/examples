@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is an example of a SAAS like app written using [deep-storage](https://github.com/deep-storage/deep-storage)
+This is a real world example app written using [deep-storage](https://github.com/deep-storage/deep-storage)
 
 See a [demo](http://react-saas.surge.sh/).
 

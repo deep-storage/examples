@@ -17,7 +17,8 @@ export interface LoginDetails {
 export default class LoginCreator implements ComponentCreator {
 
     component = async () => {
-        this.storage.setIn()({
+        // set last login to failed
+        await this.storage.setIn()({
             lastLoginFailed: false
         });
         const form = deepForm(this.storage.deep('form'), new LoginValidator());
@@ -28,6 +29,7 @@ export default class LoginCreator implements ComponentCreator {
                 form
             },
             {
+                // adds a prop called 'login' to the component
                 login: async () => {
                     const { username, password } = form.data();
                     const success = await this.authentication.login(username, password);

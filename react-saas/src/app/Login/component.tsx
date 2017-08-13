@@ -33,7 +33,7 @@ export default class Login extends React.Component<LoginProps> {
     const { form } = this.props;
     return (
       <div className="columns">
-        <div className="column is-4 is-offset-4" style={{ paddingTop: '10vh' }}>
+        <div className="column is-4 is-offset-4" style={{ padding: '10vh 2em 0 2em' }}>
           <BrandDiv>
             <h2 className="title is-2">Deep Storage</h2>
             <h4 className="subtitle is-4">Sample Application</h4>
