@@ -18,7 +18,7 @@ const start = async () => {
   const app = new appModule.AppCreator(storage.deep('app'), authentication, history);
   await authentication.start();
 
-  const App = await app.component();
+  const App = await app.create();
   ReactDOM.render(
     <App />,
     document.getElementById('root') as HTMLElement

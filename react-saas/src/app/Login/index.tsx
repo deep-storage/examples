@@ -16,7 +16,7 @@ export interface LoginDetails {
 
 export default class LoginCreator implements ComponentCreator {
 
-    component = async () => {
+    create = async () => {
         // set last login to failed
         await this.storage.setIn()({
             lastLoginFailed: false

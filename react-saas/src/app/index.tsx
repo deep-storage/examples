@@ -15,7 +15,7 @@ export interface AppDeepState {
 
 export class AppCreator implements ComponentCreator {
 
-    component = async () => {
+    create = async () => {
         const login = new LoginCreator(
             this.storage.deep('login'),
             this.authentication,
@@ -30,11 +30,11 @@ export class AppCreator implements ComponentCreator {
                 authentication: this.authentication
             },
             {
-                Login: await login.component(),
-                FullScreen: await fullScreen.component(),
-                Template: await template.component(),
-                Home: await home.component(),
-                Accounts: await accounts.component()
+                Login: await login.create(),
+                FullScreen: await fullScreen.create(),
+                Template: await template.create(),
+                Home: await home.create(),
+                Accounts: await accounts.create()
             })(Component);
     }
 

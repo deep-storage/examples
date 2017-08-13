@@ -3,12 +3,12 @@ import Component from './component';
 import { Authentication } from '../../authentication/index';
 
 export default class TemplateCreator implements ComponentCreator {
-    component: () => Promise<React.ComponentType>;
+    create: () => Promise<React.ComponentType>;
 
     constructor(
         authentication: Authentication
     ) {
-        this.component = async () => connect(
+        this.create = async () => connect(
             {
             },
             {
