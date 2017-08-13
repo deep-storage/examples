@@ -12,6 +12,7 @@ See a [demo](http://react-saas.surge.sh/).
 * Form validation using deep-storate-react forms
 * Code splitting via async imports
 * Frameless full screen views or views with menus etc.
+* Responsive
 * Uses [bulma](https://bulma.io)
 * TypeScript
 
