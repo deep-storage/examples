@@ -15,6 +15,7 @@ See a [demo](http://react-saas.surge.sh/).
 * Responsive
 * Uses [bulma](https://bulma.io)
 * TypeScript
+* create-react-app
 
 ## Running
 
