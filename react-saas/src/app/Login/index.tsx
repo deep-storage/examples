@@ -4,7 +4,6 @@ import Component from './component';
 import { Authentication } from '../../authentication/index';
 import { deepForm } from 'deep-storage-react';
 import LoginValidator from './validator';
-import { DeepForm } from '../../../../../deep-storage-react/forms';
 
 export interface LoginDeepState {
     lastLoginFailed: boolean;
@@ -16,39 +15,35 @@ export interface LoginDetails {
 }
 
 export default class LoginCreator implements ComponentCreator {
-    component: React.ComponentType;
-    storage: DeepStorage<LoginDeepState>;
-    form: DeepForm<LoginDetails>;
 
-    login = async() => {
-        const { username, password } = this.form.data();
-        const success = await this.authentication.login(username, password);
-        if (success) {
-            await this.storage.setIn('lastLoginFailed')(false);
-        } else {
-            await this.storage.setIn('lastLoginFailed')(true);
-        }
-    }
-
-    constructor(
-        storage: DeepStorage<LoginDeepState>,
-        private authentication: Authentication,
-    ) {
-        this.storage = storage.init({
+    component = async () => {
+        this.storage.setIn()({
             lastLoginFailed: false
         });
-
-        this.form = deepForm(this.storage.deep('form'), new LoginValidator());
-
-        this.component = connect(
+        const form = deepForm(this.storage.deep('form'), new LoginValidator());
+        return connect(
             {
                 authentication: this.authentication,
                 ...this.storage.props,
-                form: this.form
+                form
             },
             {
-                login: this.login
+                login: async () => {
+                    const { username, password } = form.data();
+                    const success = await this.authentication.login(username, password);
+                    if (success) {
+                        await this.storage.setIn('lastLoginFailed')(false);
+                    } else {
+                        await this.storage.setIn('lastLoginFailed')(true);
+                    }
+                }
             }
         )(Component);
+    }
+
+    constructor(
+        private storage: DeepStorage<LoginDeepState>,
+        private authentication: Authentication,
+    ) {
     }
 }

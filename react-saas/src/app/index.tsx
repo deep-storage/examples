@@ -1,4 +1,4 @@
-import * as React from 'react';
+// import * as React from 'react';
 import { connect, ComponentCreator } from 'deep-storage-react';
 import { DeepStorage } from 'deep-storage';
 import Component from './component';
@@ -14,31 +14,33 @@ export interface AppDeepState {
 }
 
 export default class AppCreator implements ComponentCreator {
-    component: React.ComponentType;
-    constructor(
-        storage: DeepStorage<AppDeepState>,
-        authentication: Authentication,
-        history: History
-    ) {
+
+    component = async () => {
         const login = new LoginCreator(
-            storage.deep('login'),
-            authentication,
+            this.storage.deep('login'),
+            this.authentication,
         );
         const fullScreen = new FullScreenCreator();
         const home = new HomeCreator();
         const accounts = new AccountsCreator();
-        const template = new TemplateCreator(authentication);
-        this.component = connect(
+        const template = new TemplateCreator(this.authentication);
+        return connect(
             {
-                authentication
+                authentication: this.authentication
             },
             {
-                Login: login.component,
-                FullScreen: fullScreen.component,
-                Template: template.component,
-                Home: home.component,
-                Accounts: accounts.component
-
+                Login: await login.component(),
+                FullScreen: await fullScreen.component(),
+                Template: await template.component(),
+                Home: await home.component(),
+                Accounts: await accounts.component()
             })(Component);
+    }
+
+    constructor(
+        private storage: DeepStorage<AppDeepState>,
+        private authentication: Authentication,
+        history: History
+    ) {
     }
 }

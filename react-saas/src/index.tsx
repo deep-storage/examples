@@ -15,10 +15,15 @@ const history = createBrowserHistory();
 const authentication = new MockAuthentication(storage.deep('authentication'));
 const app = new AppCreator(storage.deep('app'), authentication, history);
 
-authentication.start();
+const start = async () => {
 
-ReactDOM.render(
-  <app.component />,
-  document.getElementById('root') as HTMLElement
-);
-registerServiceWorker();
+  await authentication.start();
+  const App = await app.component();
+  ReactDOM.render(
+    <App />,
+    document.getElementById('root') as HTMLElement
+  );
+  registerServiceWorker();
+};
+
+start();
