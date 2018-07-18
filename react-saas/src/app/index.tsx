@@ -1,5 +1,4 @@
 import { connect } from "deep-storage-react";
-import { History } from "history";
 import { Authentication } from "../authentication/index";
 import { accountsCreator } from "./Accounts/index";
 import Component, { AppProps } from "./component";
@@ -8,10 +7,7 @@ import { homeCreator } from "./Home/index";
 import { loginCreator } from "./Login/index";
 import { templateCreator } from "./Template/index";
 
-export const appCreator = async (
-  authentication: Authentication,
-  history: History
-) => {
+export const appCreator = async (authentication: Authentication) => {
   const Login = await loginCreator(authentication);
 
   const FullScreen = await fullScreenCreator();

@@ -1964,9 +1964,9 @@ deep-is@~0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
 
-deep-storage-react@^5.0.4:
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/deep-storage-react/-/deep-storage-react-5.0.4.tgz#59818a583dfc0c68f4a461361b59c82ebd9863fb"
+deep-storage-react@^5.0.5:
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/deep-storage-react/-/deep-storage-react-5.0.5.tgz#25ffb5d78dae5b2c9ede7ea8aafae1742a44877c"
   dependencies:
     deep-storage "^5.0.0"
     react "^16.4.1"
