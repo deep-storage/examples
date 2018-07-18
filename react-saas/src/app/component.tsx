@@ -22,16 +22,6 @@ const InApp = (props: AppProps & RouteProps) => (
   </props.Template>
 );
 
-// function once(component: () => Promise<React.ComponentType>) {
-//   let result: Promise<React.ComponentType>;
-//   return () => {
-//     if(typeof result === 'undefined') {
-//       result = component();
-//     }
-//     return result;
-//   }
-// }
-
 // tslint:disable-next-line:max-classes-per-file
 export default class App extends React.Component<AppProps> {
   // storing InApp as an instance variable so that it's cached

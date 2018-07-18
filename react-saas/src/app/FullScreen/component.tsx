@@ -14,7 +14,7 @@ const CenteredDiv = glamorous.div({
 const HomeButtonDiv = glamorous.div({ marginTop: 10 });
 
 export default class FullScreen extends React.Component {
-  render() {
+  public render() {
     return (
       <CenteredDiv>
         <div>Full Screen!</div>

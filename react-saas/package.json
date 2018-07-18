@@ -28,6 +28,8 @@
   "devDependencies": {
     "@types/classnames": "^2.2.5",
     "@types/history": "^4.6.2",
-    "@types/react-router-dom": "^4.2.7"
+    "@types/react-router-dom": "^4.2.7",
+    "tslint": "^5.11.0",
+    "typescript": "^2.9.2"
   }
 }
