@@ -1,28 +1,21 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import registerServiceWorker from './registerServiceWorker';
-import './index.css';
-import 'bulma/css/bulma.css';
-import deepStorage from 'deep-storage';
-import MockAuthentication from './authentication';
-import createBrowserHistory from 'history/createBrowserHistory';
+import * as React from "react";
+
+import "bulma/css/bulma.css";
+import createBrowserHistory from "history/createBrowserHistory";
+import * as ReactDOM from "react-dom";
+import MockAuthentication from "./authentication";
+import "./index.css";
+import registerServiceWorker from "./registerServiceWorker";
 
 const start = async () => {
-  const storage = deepStorage({
-  });
-
-  const appModule = await import('./app');
+  const appModule = await import("./app");
 
   const history = createBrowserHistory();
-  const authentication = new MockAuthentication(storage.deep('authentication'));
-  const app = new appModule.AppCreator(storage.deep('app'), authentication, history);
+  const authentication = new MockAuthentication();
+  const App = await appModule.appCreator(authentication, history);
   await authentication.start();
 
-  const App = await app.create();
-  ReactDOM.render(
-    <App />,
-    document.getElementById('root') as HTMLElement
-  );
+  ReactDOM.render(<App />, document.getElementById("root") as HTMLElement);
   registerServiceWorker();
 };
 

@@ -1,49 +1,34 @@
-// import * as React from 'react';
-import { connect, ComponentCreator } from 'deep-storage-react';
-import { DeepStorage } from 'deep-storage';
-import Component from './component';
-import { Authentication } from '../authentication/index';
-import LoginCreator from './Login/index';
-import { History } from 'history';
-import FullScreenCreator from './FullScreen/index';
-import TemplateCreator from './Template/index';
-import HomeCreator from './Home/index';
-import AccountsCreator from './Accounts/index';
+import { connect } from "deep-storage-react";
+import { History } from "history";
+import { Authentication } from "../authentication/index";
+import { accountsCreator } from "./Accounts/index";
+import Component, { AppProps } from "./component";
+import { fullScreenCreator } from "./FullScreen/index";
+import { homeCreator } from "./Home/index";
+import { loginCreator } from "./Login/index";
+import { templateCreator } from "./Template/index";
 
-export interface AppDeepState {
-}
+export const appCreator = async (
+  authentication: Authentication,
+  history: History
+) => {
+  const Login = await loginCreator(authentication);
 
-export class AppCreator implements ComponentCreator {
+  const FullScreen = await fullScreenCreator();
+  const Home = await homeCreator();
+  const Accounts = await accountsCreator();
+  const Template = await templateCreator(authentication);
 
-    create = async () => {
-        const login = new LoginCreator(
-            this.storage.deep('login'),
-            this.authentication,
-        );
-        const fullScreen = new FullScreenCreator();
-        const home = new HomeCreator();
-        const accounts = new AccountsCreator();
-        const template = new TemplateCreator(this.authentication);
-
-        return connect(
-            {
-                authentication: this.authentication
-            },
-            {
-                Login: await login.create(),
-                FullScreen: await fullScreen.create(),
-                Template: await template.create(),
-                Home: await home.create(),
-                Accounts: await accounts.create()
-            })(Component);
-    }
-
-    constructor(
-        private storage: DeepStorage<AppDeepState>,
-        private authentication: Authentication,
-        history: History
-    ) {
-    }
-}
-
-export default AppCreator;
+  return connect<{}, AppProps>(
+    {},
+    {
+      Login,
+      FullScreen,
+      Template,
+      Home,
+      Accounts,
+      authentication
+    },
+    [authentication.storage]
+  )(Component);
+};

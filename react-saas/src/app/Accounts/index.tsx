@@ -1,8 +1,3 @@
-import { ComponentCreator } from 'deep-storage-react';
-import Component from './component';
+import Component from "./component";
 
-// this could also just be a regular component. ComponentCreator is
-// only required for components that need dependency injection
-export default class AccountsCreator implements ComponentCreator {
-    create = async() => Component;
-}
+export const accountsCreator = async () => Component;

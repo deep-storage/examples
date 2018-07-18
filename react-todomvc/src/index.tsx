@@ -1,23 +1,25 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 
-import 'todomvc-common/base.css';
-import 'todomvc-app-css/index.css';
+import "todomvc-common/base.css";
+import "todomvc-app-css/index.css";
 
-import deepStorage from 'deep-storage';
-import { connect } from 'deep-storage-react';
+import { deepStorage } from "deep-storage";
+import { connect } from "deep-storage-react";
 
-import TodoApp from './app';
+import TodoApp, { TodoAppProps } from "./app";
 import { Todos, DeepTodoModel } from "./todoModel";
 
 const storage = deepStorage({
-    todos: {}
+  todos: {}
 } as Todos);
 
 const model = new DeepTodoModel(storage);
 
-const DeepTodoApp = connect({ model })(TodoApp);
+const DeepTodoApp = connect<{}, TodoAppProps>(
+  {},
+  { model },
+  [model.storage]
+)(TodoApp);
 
-ReactDOM.render(
-    (<DeepTodoApp/>)
-    , document.getElementById('root'));
+ReactDOM.render(<DeepTodoApp />, document.getElementById("root"));

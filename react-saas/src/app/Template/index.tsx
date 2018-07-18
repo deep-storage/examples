@@ -1,19 +1,12 @@
-import { connect, ComponentCreator } from 'deep-storage-react';
-import Component from './component';
-import { Authentication } from '../../authentication/index';
+import { connect } from "deep-storage-react";
+import { Authentication } from "../../authentication/index";
+import Component, { TemplateProps } from "./component";
 
-export default class TemplateCreator implements ComponentCreator {
-    create: () => Promise<React.ComponentType>;
-
-    constructor(
-        authentication: Authentication
-    ) {
-        this.create = async () => connect(
-            {
-            },
-            {
-                logOut: authentication.logOut
-            }
-        )(Component);
+export const templateCreator = async (authentication: Authentication) => {
+  return connect<{}, TemplateProps>(
+    {},
+    {
+      logOut: authentication.logOut
     }
-}
+  )(Component);
+};
