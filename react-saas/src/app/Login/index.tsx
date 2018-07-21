@@ -1,8 +1,8 @@
 import { deepStorage } from "deep-storage";
-import { connect } from "deep-storage-react";
+import { wire } from "deep-storage-react";
 import { deepForm } from "deep-storage-react";
 import { Authentication } from "../../authentication/index";
-import Component, { LoginProps } from "./component";
+import Component from "./component";
 import LoginValidator from "./validator";
 
 export interface LoginDeepState {
@@ -19,7 +19,8 @@ export const loginCreator = async (authentication: Authentication) => {
     lastLoginFailed: false
   });
   const form = deepForm(new LoginValidator());
-  return connect<{}, LoginProps>(
+  return wire(
+    Component,
     {},
     {
       form,
@@ -28,6 +29,7 @@ export const loginCreator = async (authentication: Authentication) => {
         const { username, password } = form.data();
         const success = await authentication.login(username, password);
         if (success) {
+          await form.reset();
           await storage.deep("lastLoginFailed").set(false);
         } else {
           await storage.deep("lastLoginFailed").set(true);
@@ -35,5 +37,5 @@ export const loginCreator = async (authentication: Authentication) => {
       }
     },
     [form.storage, authentication.storage]
-  )(Component);
+  );
 };

@@ -9,8 +9,8 @@
     "@types/react-dom": "^16.0.6",
     "bulma": "^0.7.1",
     "classnames": "^2.2.6",
-    "deep-storage": "^5.0.0",
-    "deep-storage-react": "^5.0.5",
+    "deep-storage": "^5.0.1",
+    "deep-storage-react": "^5.0.8",
     "glamor": "^2.20.40",
     "glamorous": "^4.13.1",
     "history": "^4.7.2",
@@ -26,9 +26,9 @@
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.5",
+    "@types/classnames": "^2.2.6",
     "@types/history": "^4.6.2",
-    "@types/react-router-dom": "^4.2.7",
+    "@types/react-router-dom": "^4.3.0",
     "tslint": "^5.11.0",
     "typescript": "^2.9.2"
   }

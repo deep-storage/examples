@@ -16,9 +16,9 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@types/classnames@^2.2.5":
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.5.tgz#62945b24b48dc02fb32e89252bde3daf942c4235"
+"@types/classnames@^2.2.6":
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.6.tgz#dbe8a666156d556ed018e15a4c65f08937c3f628"
 
 "@types/history@*", "@types/history@^4.6.2":
   version "4.6.2"
@@ -39,9 +39,9 @@
     "@types/node" "*"
     "@types/react" "*"
 
-"@types/react-router-dom@^4.2.7":
-  version "4.2.7"
-  resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-4.2.7.tgz#9d36bfe175f916dd8d7b6b0237feed6cce376b4c"
+"@types/react-router-dom@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-4.3.0.tgz#c91796d02deb3a5b24bc1c5db4a255df0d18b8b5"
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
@@ -1964,17 +1964,17 @@ deep-is@~0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
 
-deep-storage-react@^5.0.5:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/deep-storage-react/-/deep-storage-react-5.0.5.tgz#25ffb5d78dae5b2c9ede7ea8aafae1742a44877c"
+deep-storage-react@^5.0.8:
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/deep-storage-react/-/deep-storage-react-5.0.8.tgz#8ecde9df0c089ad9b062ef6b6d9495c9d6be9dac"
   dependencies:
-    deep-storage "^5.0.0"
+    deep-storage "^5.0.1"
     react "^16.4.1"
     react-dom "^16.4.1"
 
-deep-storage@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/deep-storage/-/deep-storage-5.0.0.tgz#aac18f4b9f6e8fc7102a3b013b58a24191cb1ebf"
+deep-storage@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/deep-storage/-/deep-storage-5.0.1.tgz#52ad8d287a6ae36167a24d8d67b83b5b51b3de8b"
 
 deepmerge@^2.0.1:
   version "2.1.1"

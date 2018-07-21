@@ -14,17 +14,15 @@ export interface NavLinkProps {
 export const NavLink = (props: NavLinkProps) => {
   const { label, location, to, onClick } = props;
   return (
-    <div className="navbar-item">
-      <Link
-        onClick={onClick}
-        className={classnames({
-          "is-active": location && location.pathname === to
-        })}
-        to={to}
-      >
-        {label}
-      </Link>
-    </div>
+    <Link
+      onClick={onClick}
+      className={classnames("navbar-item", {
+        "is-active": location && location.pathname === to
+      })}
+      to={to}
+    >
+      {label}
+    </Link>
   );
 };
 

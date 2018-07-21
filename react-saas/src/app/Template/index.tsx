@@ -1,12 +1,13 @@
-import { connect } from "deep-storage-react";
+import { wire } from "deep-storage-react";
 import { Authentication } from "../../authentication/index";
-import Component, { TemplateProps } from "./component";
+import Component from "./component";
 
 export const templateCreator = async (authentication: Authentication) => {
-  return connect<{}, TemplateProps>(
+  return wire(
+    Component,
     {},
     {
       logOut: authentication.logOut
     }
-  )(Component);
+  );
 };

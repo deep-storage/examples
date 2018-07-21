@@ -42,7 +42,7 @@ export default class Template extends React.Component<
     const { location } = this.props;
     return (
       <div>
-        <nav className="navbar has-shadow">
+        <nav className="navbar" role="navigation">
           <div className="container">
             <div className="navbar-brand">
               <Link className="navbar-item" to="/">
@@ -89,9 +89,9 @@ export default class Template extends React.Component<
                 />
               </div>
               <div className="navbar-end">
-                <div className="navbar-item">
-                  <a onClick={this.handleLogout}>Logout</a>
-                </div>
+                <a className="navbar-item" onClick={this.handleLogout}>
+                  Logout
+                </a>
               </div>
             </div>
           </div>
